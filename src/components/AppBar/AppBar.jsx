@@ -21,7 +21,6 @@ export const AppBar = () => {
 					Movies
 				</NavLink>
 			</nav>
-			<br />
 		</header>
 	)
 }
