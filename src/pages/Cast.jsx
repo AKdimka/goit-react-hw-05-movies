@@ -12,7 +12,7 @@ export const Cast = () => {
 		fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`)
 			.then(r => r.json())
 			.then(cast => setCast(cast))
-	}, [])
+	}, [movieId])
 
 	return (
 		<h1>Cast Page</h1>

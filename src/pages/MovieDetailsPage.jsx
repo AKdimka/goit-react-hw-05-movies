@@ -14,7 +14,7 @@ export const MovieDetailsPage = () => {
 		fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
 			.then(r => r.json())
 			.then(det => setDetails(det))
-	}, [])
+	}, [movieId])
 
 	const { poster_path, title, vote_average, overview, genres } = details;
 
