@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link/* , Routes, Route  */ } from "react-router-dom";
 /* import { Cast } from '../pages/Cast';
 import { Reviews } from '../pages/Reviews'; */
 
