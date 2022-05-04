@@ -23,7 +23,10 @@ export const Layout = () => {
 			<hr />
 		</header>
 
-		<Outlet />
+		<main>
+			<Outlet />
+		</main>
+
 
 		<footer>
 			<hr />

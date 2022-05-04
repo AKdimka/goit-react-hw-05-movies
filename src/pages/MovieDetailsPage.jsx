@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link, Routes, Route } from "react-router-dom";
-import { Cast } from '../pages/Cast';
-import { Reviews } from '../pages/Reviews';
+/* import { Cast } from '../pages/Cast';
+import { Reviews } from '../pages/Reviews'; */
 
 export const MovieDetailsPage = () => {
 	const [details, setDetails] = useState({});
@@ -22,10 +22,10 @@ export const MovieDetailsPage = () => {
 		<>
 			<div style={{ display: 'flex' }}>
 				<div >
-					<img
+					{poster_path && <img
 						src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
 						height="300" width="200"
-						alt={`${title} poster`} />
+						alt={`${title} poster`} />}
 				</div>
 				<div>
 					<h2>{title}</h2>
@@ -49,12 +49,12 @@ export const MovieDetailsPage = () => {
 				<hr />
 			</div>
 
-			<div>
+			{/* 	<div>
 				<Routes>
 					<Route path={`/movies/${movieId}/cast`} element={<Cast />} />
 					<Route path={`/movies/${movieId}/reviews`} element={<Reviews />} />
 				</Routes>
-			</div>
+			</div> */}
 		</>
 	)
 }
