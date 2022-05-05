@@ -1,22 +1,39 @@
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import {
+	MovieCard,
+	CustomLink,
+	MovieText,
+	MovieTitle,
+	MovieVote,
+	MovieImg,
+} from './MovieItem.styled';
 
-export const MovieItem = ({ id, movieTitle, poster }) => {
+export const MovieItem = ({ id, movieTitle, poster, vote_average, vote_count }) => {
 	return (
-		<li style={{ maxWidth: '300px', minHeight: '230px', margin: '15px' }}>
-			<Link to={`/movies/${id}`} style={{ color: 'black', textDecoration: 'none' }}>
-				<article>
-					<div >
-						<img style={{ display: 'block', minHeight: '300px' }}
-							src={`https://image.tmdb.org/t/p/w500/${poster}`}
-							height="300" width="200"
-							alt={`${movieTitle} poster`} />
-					</div>
-					<div>
-						<h4 >{movieTitle}</h4>
-						<p></p>
-					</div>
-				</article>
-			</Link>
-		</li>
+		<MovieCard>
+			<CustomLink to={`/movies/${id}`}>
+				<div>
+					<MovieImg
+						src={`https://image.tmdb.org/t/p/w500/${poster}`}
+						alt={`${movieTitle} poster`} />
+				</div>
+
+				<MovieText>
+					<MovieTitle>{movieTitle}</MovieTitle>
+					<MovieVote>
+						<p>Voted:{vote_count}</p>
+						<p>Average:{vote_average}</p>
+					</MovieVote>
+				</MovieText>
+			</CustomLink>
+		</MovieCard>
 	)
+}
+
+MovieItem.propTypes = {
+	id: PropTypes.number.isRequired,
+	movieTitle: PropTypes.string.isRequired,
+	poster: PropTypes.string.isRequired,
+	vote_average: PropTypes.number.isRequired,
+	vote_count: PropTypes.number.isRequired,
 }

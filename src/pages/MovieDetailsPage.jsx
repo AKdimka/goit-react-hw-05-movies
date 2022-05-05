@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Link/* , Routes, Route  */ } from "react-router-dom";
-/* import { Cast } from '../pages/Cast';
-import { Reviews } from '../pages/Reviews'; */
+import { NavLink, Routes, Route } from "react-router-dom";
+import { Cast } from '../pages/Cast';
+import { Reviews } from '../pages/Reviews';
+import { MovieContent } from "components/MovieContent/MovieContent";
 
 export const MovieDetailsPage = () => {
 	const [details, setDetails] = useState({});
@@ -16,45 +17,28 @@ export const MovieDetailsPage = () => {
 			.then(det => setDetails(det))
 	}, [movieId])
 
-	const { poster_path, title, vote_average, overview, genres } = details;
-
 	return (
 		<>
-			<div style={{ display: 'flex' }}>
-				<div >
-					{poster_path && <img
-						src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-						height="300" width="200"
-						alt={`${title} poster`} />}
-				</div>
-				<div>
-					<h2>{title}</h2>
-					<p>User Score: <span>{vote_average}</span></p>
-					<h3>Overview</h3>
-					<p>{overview}</p>
-					<h3>Genres</h3>
-					{genres && genres.map(({ id, name }) => <li key={id}>{name}</li>)}
-				</div>
-			</div >
-			<hr />
+			<MovieContent details={details} />
+
 			<div>
-				<ul>
+				<ul style={{ listStyle: 'none' }}>
 					<li>
-						<Link to={`/movies/${movieId}/cast`}>Cast</Link>
+						<NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>
 					</li>
 					<li>
-						<Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+						<NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
 					</li>
 				</ul>
 				<hr />
 			</div>
 
-			{/* 	<div>
+			<div>
 				<Routes>
-					<Route path={`/movies/${movieId}/cast`} element={<Cast />} />
-					<Route path={`/movies/${movieId}/reviews`} element={<Reviews />} />
+					<Route path={`cast`} element={<Cast />} />
+					<Route path={`reviews`} element={<Reviews />} />
 				</Routes>
-			</div> */}
+			</div>
 		</>
 	)
 }

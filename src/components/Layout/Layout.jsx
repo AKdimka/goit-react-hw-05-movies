@@ -1,36 +1,30 @@
-import { NavLink, Outlet } from "react-router-dom";
-import css from './Layout.module.css';
+import { Outlet } from "react-router-dom";
+import { Wrapper, Header, Main, Nav, CastomNavLink, Footer } from './Layout.styled';
 
 
 export const Layout = () => {
 	return (<>
-		<header>
-			<nav className={css.nav}>
-				<NavLink
-					to='/'
-					className={css.navLink}
-					style={({ isActive }) => ({ color: isActive ? 'red' : 'black' })}>
-					Home
-				</NavLink>
+		<Wrapper>
+			<Header>
+				<Nav>
+					<CastomNavLink
+						to='/'>
+						Home
+					</CastomNavLink>
+					<CastomNavLink
+						to='/movies'>
+						Movies
+					</CastomNavLink>
+				</Nav>
+			</Header>
 
-				<NavLink
-					to='/movies'
-					className={css.navLink}
-					style={({ isActive }) => ({ color: isActive ? 'red' : 'black' })}>
-					Movies
-				</NavLink>
-			</nav>
-			<hr />
-		</header>
+			<Main>
+				<Outlet />
+			</Main>
 
-		<main>
-			<Outlet />
-		</main>
-
-
-		<footer>
-			<hr />
-			2022
-		</footer>
+			<Footer>
+				Created on React in 2022
+			</Footer>
+		</Wrapper>
 	</>)
 }

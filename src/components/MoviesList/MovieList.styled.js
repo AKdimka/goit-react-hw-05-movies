@@ -1,0 +1,8 @@
+import styled from "styled-components";
+
+export const MoviesList = styled.ul`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	list-style: none;
+`

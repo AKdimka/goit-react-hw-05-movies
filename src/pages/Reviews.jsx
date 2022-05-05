@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { RewiewsList } from "components/Reviews/ReviewsList";
 
 export const Reviews = () => {
 	const { movieId } = useParams();
@@ -13,21 +14,10 @@ export const Reviews = () => {
 			.then(({ results }) => setReviews(results))
 	}, [movieId])
 
-	console.log(reviews);
 	return (
 		<>
 			<h2>Reviews</h2>
-			<ul>
-				{reviews && reviews.map(({ id, author, content }) => {
-					return (
-						<li key={id}>
-							<h3>{author}</h3>
-							<p>
-								{content}
-							</p>
-						</li>)
-				})}
-			</ul>
+			<RewiewsList reviews={reviews} />
 		</>
 	)
 }
