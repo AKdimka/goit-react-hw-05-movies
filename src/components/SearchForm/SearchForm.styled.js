@@ -8,11 +8,15 @@ export const Form = styled.form`
 	border-radius: 4px;
 `
 export const SearchInput = styled.input`
+	color: white;
+	letter-spacing: 1px;
+	font-size: 17px;
 	width: 50%;
 	padding:5px;
   border-radius:10px;
 	border: 2px solid #eee;
 	background: inherit;
+	
 	:focus{
 		outline: none;
 		border-color: darkred;

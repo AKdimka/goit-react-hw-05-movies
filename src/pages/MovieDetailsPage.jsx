@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { MovieContent } from "components/MovieContent/MovieContent";
+import { MovieAdditionLinks } from "components/MovieAdditionLinks/MovieAdditionLinks";
 
 export default function MovieDetailsPage() {
 	const [details, setDetails] = useState({});
@@ -19,17 +20,7 @@ export default function MovieDetailsPage() {
 		<>
 			<MovieContent details={details} />
 
-			<div>
-				<ul style={{ listStyle: 'none' }}>
-					<li>
-						<NavLink to={'cast'}>Cast</NavLink>
-					</li>
-					<li>
-						<NavLink to={'reviews'}>Reviews</NavLink>
-					</li>
-				</ul>
-				<hr />
-			</div>
+			<MovieAdditionLinks />
 
 			<div>
 				<Outlet />

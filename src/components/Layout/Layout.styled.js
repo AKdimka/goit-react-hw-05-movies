@@ -19,7 +19,8 @@ export const Nav = styled.nav`
 `
 export const CastomNavLink = styled(NavLink)`
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 25px;
+	font-weight: 500;
 	padding: 10px;
 	color: #000;
 

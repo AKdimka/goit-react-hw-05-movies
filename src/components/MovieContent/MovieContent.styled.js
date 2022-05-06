@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
 display: flex;
 border-bottom: 1px solid #fff;
+padding-bottom: 10px;
 `
 export const ImgWrapper = styled.div`
 `
