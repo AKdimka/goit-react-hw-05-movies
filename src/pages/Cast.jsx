@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ActorList } from "components/Actors/ActorList";
 
-export const Cast = () => {
+export default function Cast() {
 	const [cast, setCast] = useState(null);
 	const { movieId } = useParams();
 
@@ -16,7 +16,7 @@ export const Cast = () => {
 
 	return (
 		<>
-			<h2>Cast</h2>
+			<h1>Cast</h1>
 			<ActorList cast={cast} />
 		</>
 	)

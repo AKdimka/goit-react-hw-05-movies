@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { NavLink, Routes, Route } from "react-router-dom";
-import { Cast } from '../pages/Cast';
-import { Reviews } from '../pages/Reviews';
+import { NavLink, Outlet } from "react-router-dom";
 import { MovieContent } from "components/MovieContent/MovieContent";
 
-export const MovieDetailsPage = () => {
+export default function MovieDetailsPage() {
 	const [details, setDetails] = useState({});
 	const { movieId } = useParams();
 
@@ -24,20 +22,17 @@ export const MovieDetailsPage = () => {
 			<div>
 				<ul style={{ listStyle: 'none' }}>
 					<li>
-						<NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>
+						<NavLink to={'cast'}>Cast</NavLink>
 					</li>
 					<li>
-						<NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
+						<NavLink to={'reviews'}>Reviews</NavLink>
 					</li>
 				</ul>
 				<hr />
 			</div>
 
 			<div>
-				<Routes>
-					<Route path={`cast`} element={<Cast />} />
-					<Route path={`reviews`} element={<Reviews />} />
-				</Routes>
+				<Outlet />
 			</div>
 		</>
 	)

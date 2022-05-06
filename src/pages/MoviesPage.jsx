@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { MovieList } from "../components/MoviesList/MovieList";
 import { SearchForm } from "components/SearchForm/SearchForm";
 
-export const MoviesPage = () => {
+export default function MoviesPage() {
 	const [movies, setMovies] = useState([]);
 	const [query, setQuery] = useState('');
 

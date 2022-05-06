@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { RewiewsList } from "components/Reviews/ReviewsList";
 
-export const Reviews = () => {
+export default function Reviews() {
 	const { movieId } = useParams();
 	const [reviews, setReviews] = useState();
 
@@ -16,7 +16,7 @@ export const Reviews = () => {
 
 	return (
 		<>
-			<h2>Reviews</h2>
+			<h1>Reviews</h1>
 			<RewiewsList reviews={reviews} />
 		</>
 	)

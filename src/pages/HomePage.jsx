@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { MovieList } from "components/MoviesList/MovieList";
+import Loader from "components/Loader/Loader";
 
-export const HomePage = () => {
+export default function HomePage() {
 	const [trendingMovies, setTrendingMovies] = useState([]);
 
 	useEffect(() => {
