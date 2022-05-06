@@ -1,7 +1,7 @@
 import { BallTriangle } from 'react-loader-spinner';
 import { LoaderContainer } from './Loader.styled';
 
-export default function () {
+export const Loader = () => {
 	return (
 		<LoaderContainer >
 			<BallTriangle
