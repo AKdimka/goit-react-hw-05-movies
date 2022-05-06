@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { MovieContent } from "components/MovieContent/MovieContent";
 import { MovieAdditionLinks } from "components/MovieAdditionLinks/MovieAdditionLinks";
+import { Loader } from "components/Loader/Loader.jsx";
+
+const Cast = lazy(() => import('../pages/Cast.jsx' /* webpackChunkName:"cast" */));
+const Reviews = lazy(() => import('../pages/Reviews.jsx' /* webpackChunkName:"review" */));
 
 export default function MovieDetailsPage() {
 	const [details, setDetails] = useState({});
@@ -23,7 +27,12 @@ export default function MovieDetailsPage() {
 			<MovieAdditionLinks />
 
 			<div>
-				<Outlet />
+				<Suspense fallback={<Loader />}>
+					<Routes>
+						<Route path='/cast' element={<Cast />} />
+						<Route path='/reviews' element={<Reviews />} />
+					</Routes>
+				</Suspense>
 			</div>
 		</>
 	)
