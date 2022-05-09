@@ -5,12 +5,16 @@ export const MovieCard = styled.li`
 	max-width: 300px;
 	margin: 5px;
 
+	background-color: rgba(0, 0, 0, 0.07);
 	border: 1px solid #eeeeee;
 	border-top: none;
 	border-radius: 10px;
 	overflow: hidden;
 	:hover{
-		box-shadow: 0px 1px 1px rgba(255, 0, 0, 0.12), 0px 4px 4px rgba(255, 0, 0, 0.16), 1px 4px 6px rgba(255, 0, 0, 0.26);
+		box-shadow:
+		0px 1px 1px rgba(255, 0, 0, 0.12),
+		0px 4px 4px rgba(255, 0, 0, 0.16),
+		1px 4px 6px rgba(255, 0, 0, 0.26);
 	}
 `
 export const CustomLink = styled(Link)`

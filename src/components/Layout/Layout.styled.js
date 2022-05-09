@@ -25,11 +25,11 @@ export const CastomNavLink = styled(NavLink)`
 	color: #000;
 
 	&.active{
-		color: red;
+		color: rgb(139, 0, 0);
 		text-decoration:underline;
 	}
 	:hover{
-		color: darkred;}
+		color: rgb(255, 0, 0);}
 `
 export const Footer = styled.footer`
 	display: flex;

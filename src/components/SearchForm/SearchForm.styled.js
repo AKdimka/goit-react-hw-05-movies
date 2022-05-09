@@ -27,11 +27,15 @@ export const SearchButton = styled.button`
 	cursor: pointer;
 	padding:10px;
   border:none;
-  background-color:red;
+  background-color:rgb(139,0,0);
   color:#000;
   font-weight:600;
   border-radius:15px;
 	:hover{
-		background-color:darkred
+		background-color: rgb(255,0,0);
+		box-shadow:
+			0px 1px 1px rgba(255, 0, 0, 0.2),
+			0px 4px 4px rgba(255, 0, 0, 0.25),
+			1px 4px 6px rgba(255, 0, 0, 0.33);
 	}
 `

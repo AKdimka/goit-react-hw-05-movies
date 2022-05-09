@@ -16,9 +16,10 @@ color: black;
 text-decoration: none;
 padding: 10px;
 &.active{
-	color: red;
+	color: rgb(139,0,0);
+	text-decoration: underline;
 }
 :hover{
-	color: darkred;
+	color: rgb(255,0,0);
 }
 `
