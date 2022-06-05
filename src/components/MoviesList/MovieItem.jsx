@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom";
 import {
 	MovieCard,
 	CustomLink,
@@ -9,9 +10,11 @@ import {
 } from './MovieItem.styled';
 
 export const MovieItem = ({ id, movieTitle, poster, vote_average, vote_count }) => {
+	const location = useLocation();
+
 	return (
 		<MovieCard>
-			<CustomLink to={`/movies/${id}`}>
+			<CustomLink to={`/movies/${id}`} state={{ from: location }}>
 				<div>
 					<MovieImg
 						src={`https://image.tmdb.org/t/p/w500/${poster}`}

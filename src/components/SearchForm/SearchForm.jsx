@@ -13,7 +13,6 @@ export const SearchForm = ({ setQuery }) => {
 		}
 		const normValue = value.toLowerCase();
 		setQuery(normValue);
-		setValue('')
 	}
 
 	return (

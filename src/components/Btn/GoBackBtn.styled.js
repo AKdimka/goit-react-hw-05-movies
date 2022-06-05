@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const GoBack = styled(Link)`
+export const GoBack = styled.button`
 	display: inline-block;
 	padding: 10px;
 	margin-bottom: 5px;
