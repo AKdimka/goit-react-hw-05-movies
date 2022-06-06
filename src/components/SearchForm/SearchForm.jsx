@@ -1,30 +1,29 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
 import { Form, SearchInput, SearchButton } from "./SearchForm.styled";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export const SearchForm = ({ setQuery }) => {
-	const [value, setValue] = useState('');
 
-	const handleSubmit = e => {
+export const SearchForm = () => {
+	const location = useLocation();
+	const navigate = useNavigate();
+
+	function handleSubmit(e) {
 		e.preventDefault();
+		const value = e.target.elements.query.value;
 
-		if (value.trim() === '') {
-			return
-		}
-		const normValue = value.toLowerCase();
-		setQuery(normValue);
+		navigate({
+			...location,
+			search: `query=${value}`,
+		});
 	}
 
 	return (
 		<Form onSubmit={handleSubmit}>
 			<SearchInput
 				type="text"
-				value={value}
-				onChange={e => setValue(e.target.value)} />
-			<SearchButton type="submit">Search</SearchButton>
+				name="query" />
+			<SearchButton
+				type="submit">Search</SearchButton>
 		</Form>
 	)
-}
-SearchForm.propTypes = {
-	setQuery: PropTypes.func.isRequired,
 }
