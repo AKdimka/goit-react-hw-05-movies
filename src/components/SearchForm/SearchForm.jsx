@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { Form, SearchInput, SearchButton } from "./SearchForm.styled";
 import { useLocation, useNavigate } from "react-router-dom";
 
