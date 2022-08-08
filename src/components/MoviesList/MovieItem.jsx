@@ -14,9 +14,7 @@ export const MovieItem = ({ id, movieTitle, poster, vote_average, vote_count }) 
 
 	return (
 		<MovieCard>
-			<CustomLink
-				to={`/movies/${id}`}
-				state={{ from: location.pathname + location.search }}>
+			<CustomLink to={`/movies/${id}`} state={{ from: location }}>
 				<div>
 					<MovieImg
 						src={`https://image.tmdb.org/t/p/w500/${poster}`}

@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { MovieContent } from "components/MovieContent/MovieContent";
 import { MovieAdditionLinks } from "components/MovieAdditionLinks/MovieAdditionLinks";
 import { Loader } from "components/Loader/Loader.jsx";
-/* import { GoBackBtn } from "components/Btn/GoBackBtn.jsx"; */
+
 
 const Cast = lazy(() => import('../pages/Cast.jsx' /* webpackChunkName:"cast" */));
 const Reviews = lazy(() => import('../pages/Reviews.jsx' /* webpackChunkName:"review" */));
@@ -24,7 +24,6 @@ export default function MovieDetailsPage() {
 
 	return (
 		<>
-			{/* <GoBackBtn /> */}
 			<MovieContent details={details} />
 
 			<MovieAdditionLinks />

@@ -1,4 +1,4 @@
-/* import { useLocation } from "react-router-dom"; */
+import { useLocation } from "react-router-dom";
 import {
 	LinksWrapper,
 	LinksList,
@@ -7,16 +7,16 @@ import {
 } from "./MovieAdditionLinks.styled";
 
 export const MovieAdditionLinks = () => {
-	/* const location = useLocation(); */
+	const location = useLocation();
 
 	return (
 		<LinksWrapper>
 			<LinksList style={{ listStyle: 'none' }}>
 				<LinkItem>
-					<AdditionNavLink to={'cast'} /* state={{ from: location }} */>Cast</AdditionNavLink>
+					<AdditionNavLink to={'cast'} state={location.state}>Cast</AdditionNavLink>
 				</LinkItem>
 				<LinkItem>
-					<AdditionNavLink to={'reviews'} /* state={{ from: location }} */>Reviews</AdditionNavLink>
+					<AdditionNavLink to={'reviews'} state={location.state}>Reviews</AdditionNavLink>
 				</LinkItem>
 			</LinksList>
 			<hr />
