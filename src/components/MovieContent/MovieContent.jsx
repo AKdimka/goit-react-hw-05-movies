@@ -1,11 +1,15 @@
 import PropTypes from "prop-types";
+import { useLocation } from 'react-router-dom';
 import { Wrapper, ImgWrapper, Poster, TextWrapper, GenresList } from "./MovieContent.styled";
+import { GoBackBtn } from "components/Btn/GoBackBtn";
 
 export const MovieContent = ({ details }) => {
 	const { poster_path, title, vote_average, overview, genres } = details;
+	const location = useLocation();
 
 	return (
 		<>
+			<GoBackBtn location={location} />
 			<Wrapper >
 				<ImgWrapper >
 					{poster_path && <Poster
